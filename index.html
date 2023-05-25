@@ -1,0 +1,12 @@
+<html>
+  <body>
+    <script>
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const hash = urlParams.get('hash');
+      console.log(hash);
+      var url = atob(hash);
+      window.location.replace(url);
+    </script>
+  </body>
+</html>
