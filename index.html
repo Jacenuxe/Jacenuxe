@@ -22,6 +22,9 @@
     <meta name="twitter:image" content="[image]" />
   </head>
   <body>
+    <h1>[title]</h1>
+    <p><img src="[image]" class="img-responsive"></p>
+    <p>[desc]</p>
     <script>
       const queryString = window.location.search;
       const urlParams = new URLSearchParams(queryString);
@@ -35,16 +38,14 @@
       const desc = urlParams2.get('desc');
       const image = urlParams2.get('image');
       
-      document.body.innerHTML.replace('[link]',url);
-      document.body.innerHTML.replace('[title]',title);
-      document.body.innerHTML.replace('[desc]', desc);
-      document.body.innerHTML.replace('[image]', image);
+      document.body.innerHTML = document.body.innerHTML.replace(/\[link\]/gm,url);
+      document.body.innerHTML = document.body.innerHTML.replace(/\[title\]/gm, title);
+      document.body.innerHTML = document.body.innerHTML.replace(/\[desc\]/g, desc);
+      document.body.innerHTML = document.body.innerHTML.replace(/\[image\]/g, image);
       
       //setTimeout(window.location.replace(url), 1000);
     </script>
     
-    <h1>[title]</h1>
-    <p><img src="[image]" class="img-responsive"></p>
-    <p>[desc]</p>
+    
   </body>
 </html>
