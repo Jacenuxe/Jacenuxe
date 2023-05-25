@@ -30,10 +30,12 @@
       console.log(hash);
       var data = atob(hash);
       const urlParams2 = new URLSearchParams(data);
+      const url = urlParams.get('url');
       const title = urlParams.get('title');
       const desc = urlParams.get('desc');
       const image = urlParams.get('image');
       
+      document.body.innerHTML.replace('[link]',url);
       document.body.innerHTML.replace('[title]',title);
       document.body.innerHTML.replace('[desc]', desc);
       document.body.innerHTML.replace('[image]', image);
